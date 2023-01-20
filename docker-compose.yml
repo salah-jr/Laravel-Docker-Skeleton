@@ -4,6 +4,7 @@ networks:
   laravel:
 
 services:
+  nginx:
     image: nginx:stable-alpine
     ports:
       - "80:80"
@@ -39,7 +40,6 @@ services:
   postgres:
     image: library/postgres:alpine
     restart: unless-stopped
-    container_name: parent-postgres
     ports:
       - "3000:5432"
     environment:
