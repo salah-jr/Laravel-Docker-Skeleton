@@ -13,6 +13,7 @@ A lightweight Docker container that sets up the basic containers for a local Lar
 ### Ports
 - **nginx** - `:80`
 - **mysql** - `:3306`
+- **postgres** - `:3000`
 - **php** - `:9000`
 - **redis** - `:6379`
 - **mailhog** - `:8025` 

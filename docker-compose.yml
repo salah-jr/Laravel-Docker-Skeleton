@@ -36,6 +36,21 @@ services:
     networks:
       - laravel
 
+  postgres:
+    image: library/postgres:alpine
+    restart: unless-stopped
+    container_name: parent-postgres
+    ports:
+      - "3000:5432"
+    environment:
+      POSTGRES_DB: homestead
+      POSTGRES_USER: homestead
+      POSTGRES_PASSWORD: secret
+    networks:
+      - laravel
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
   php:
     build:
       context: ./dockerfiles
