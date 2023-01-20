@@ -10,7 +10,7 @@ A lightweight Docker container that sets up the basic containers for a local Lar
 
 <br>
 
-### Ports
+## Ports
 - **nginx** - `:80`
 - **mysql** - `:3306`
 - **postgres** - `:3000`
