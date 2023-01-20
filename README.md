@@ -21,6 +21,6 @@ A lightweight Docker container that sets up the basic containers for a local Lar
 <br> 
 
 ### You can use composer, npm and artisan from the container like this:
-- `docker-compose run --rm composer update`
-- `docker-compose run --rm npm run dev`
-- `docker-compose run --rm artisan migrate`
+- `docker-compose run --rm artisan make:controller`
+- `docker-compose run --rm composer install`
+- `docker-compose run --rm npm install`
