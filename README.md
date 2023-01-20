@@ -18,6 +18,8 @@ A lightweight Docker container that sets up the basic containers for a local Lar
 - **redis** - `:6379`
 - **mailhog** - `:8025` 
 
+<br> 
+
 ### You can use composer, npm and artisan from the container like this:
 - `docker-compose run --rm artisan make:controller`
 - `docker-compose run --rm composer install`
