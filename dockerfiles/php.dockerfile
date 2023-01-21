@@ -12,9 +12,8 @@ RUN echo "php_admin_flag[log_errors] = on" >> /usr/local/etc/php-fpm.d/www.conf
 
 RUN docker-php-ext-install pdo pdo_mysql
 
-#Uncomment if you are working with posgtres
-#RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
-#    && docker-php-ext-install pgsql pdo_pgsql
+RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    && docker-php-ext-install pgsql pdo_pgsql
 
 RUN mkdir -p /usr/src/php/ext/redis \
     && curl -L https://github.com/phpredis/phpredis/archive/5.3.4.tar.gz | tar xvz -C /usr/src/php/ext/redis --strip 1 \

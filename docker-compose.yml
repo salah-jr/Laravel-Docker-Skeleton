@@ -10,7 +10,7 @@ services:
       - "80:80"
     volumes:
       - ./src:/var/www/html:delegated
-      - ./nginx/default.conf:/etc/nginx/conf.d/
+      - ./dockerfiles/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - php
       - redis
