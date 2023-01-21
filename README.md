@@ -8,6 +8,8 @@ A lightweight Docker container that sets up the basic containers for a local Lar
 
 **Note**: Your MySQL database host name in `.env` should be `mysql` (The database container name in `docker-compose` file), **not** `localhost`. The username, password and database should both be the same in `.env` file and `docker-compose` file. 
 
+**Note**: If you want to use PostgreSql instead of MySql uncomment the `postgres` and `pgadmin` containers in `docker-compose.yml` file.
+
 <br>
 
 ## Ports
