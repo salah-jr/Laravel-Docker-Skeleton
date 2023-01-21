@@ -28,3 +28,7 @@ A lightweight Docker container that sets up the basic containers for a local Lar
 - `docker-compose run --rm artisan make:controller`
 - `docker-compose run --rm composer install`
 - `docker-compose run --rm npm install`
+
+<br>
+
+[Here is as example of a real Laravel project built on this docker template.](https://github.com/salah-jr/Test-Docker-Skeleton)
