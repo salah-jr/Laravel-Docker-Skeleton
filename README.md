@@ -2,7 +2,7 @@
 A lightweight Docker container that sets up the basic containers for a local Laravel development.
 
 ## Installation
-- Make sure you have [Docker installed](https://docs.docker.com/docker-for-mac/install/) on your system, and then clone this repository.
+- Make sure you have [Docker and Docker compose installed](https://docs.docker.com/docker-for-mac/install/) on your system, and then clone this repository.
 Or click (Use this template) button to create a new repository based on this template and clone it.
 - Navigate in your terminal to the directory you cloned, and spin up the containers for the web server by running `docker-compose up -d --build app`.
 - After that completes, Clone or create your laravel project inside the `src` directory.
