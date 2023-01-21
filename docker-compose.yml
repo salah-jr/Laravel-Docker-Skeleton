@@ -37,19 +37,50 @@ services:
     networks:
       - laravel
 
-  postgres:
-    image: library/postgres:alpine
-    restart: unless-stopped
-    ports:
-      - "3000:5432"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
     environment:
-      POSTGRES_DB: homestead
-      POSTGRES_USER: homestead
-      POSTGRES_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      UPLOAD_LIMIT: 64M
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - "8081:80"
+    volumes:
+      - /sessions
     networks:
       - laravel
-    volumes:
-      - ./postgres:/var/lib/postgresql/data
+    links:
+      - mysql
+
+#  postgres:
+#    image: library/postgres:alpine
+#    restart: unless-stopped
+#    ports:
+#      - "3000:5432"
+#    environment:
+#      POSTGRES_DB: homestead
+#      POSTGRES_USER: homestead
+#      POSTGRES_PASSWORD: secret
+#    networks:
+#      - laravel
+#    volumes:
+#      - ./postgres:/var/lib/postgresql/data
+
+#  pgadmin:
+#    image: dpage/pgadmin4:latest
+#    ports:
+#      - "82:80"
+#    depends_on:
+#      - "postgres"
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: admin@mail.com
+#      PGADMIN_DEFAULT_PASSWORD: root
+#    networks:
+#      - laravel
 
   php:
     build:
@@ -67,6 +98,14 @@ services:
     restart: unless-stopped
     ports:
       - "6379:6379"
+    networks:
+      - laravel
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "1025:1025"
+      - "8025:8025"
     networks:
       - laravel
 
@@ -104,13 +143,5 @@ services:
     depends_on:
       - mysql
     entrypoint: [ 'php', '/var/www/html/artisan' ]
-    networks:
-      - laravel
-
-  mailhog:
-    image: mailhog/mailhog:latest
-    ports:
-      - "1025:1025"
-      - "8025:8025"
     networks:
       - laravel
