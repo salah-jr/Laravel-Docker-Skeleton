@@ -12,8 +12,8 @@ A lightweight Docker container that sets up the basic containers for a local Lar
 
 <br>
 
-## Ports
-- **nginx** - `:80`
+## Ports 
+- **nginx** - `:80` (To access your app write `127.0.0.1:80` in your browser)
 - **mysql** - `:3306`
 - **phpmyadmin** - `:8081`
 - **postgres** - `:3000`
