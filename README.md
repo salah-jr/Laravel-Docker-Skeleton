@@ -32,4 +32,4 @@ Or click (Use this template) button to create a new repository based on this tem
 
 <br>
 
-[Here is as example of a real Laravel project built on this docker template.](https://github.com/salah-jr/Test-Docker-Skeleton)
+[Here is an example of a real Laravel project built on this docker template.](https://github.com/salah-jr/Test-Docker-Skeleton)
